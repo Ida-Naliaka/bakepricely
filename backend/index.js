@@ -32,9 +32,6 @@ const db = async () => {
   app.use(errorHandler);
   const port = process.env.PORT || 5000;
   db().then(() => {
-    /*app.listen(port, () => {
-      console.log(`Server Started on PORT ${port}`);
-    });*/
     //Start our server and tests!
     const listener = app.listen(port,  ()=>{
       console.log('Server started on port ' + listener.address().port);
@@ -51,17 +48,6 @@ const db = async () => {
       }
     });
   });
-  //-------------------------deployment setup
-const __dirname2 = path.resolve();
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname2, "/build")));
-
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname2, "bakepricely", "build", "index.html"))
-  );
-} else {
   console.log("API is running successfully..");
-}
-//-------------------------deployment setup
+
 module.exports = app;//for testing

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start-server": "node backend/index.js",
+    "start-server": "npm install && node backend/index.js",
     "start-client": "next build && next start",
     "start-dev": "node backend/index.js && next dev",
     "build": "next build",
