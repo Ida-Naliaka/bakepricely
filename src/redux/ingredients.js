@@ -16,7 +16,7 @@ const ingredientsSlice = createSlice({
       const filter = state.ingredients.filter(
         (ingredient) => ingredient._id !== action.payload._id
       );
-      state.ingredient = filter;
+      state.ingredients = filter;
     },
     fetchingredientsSuccess: (state, action) => {
         state.isFetching = false;
