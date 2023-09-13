@@ -28,7 +28,7 @@ import { ToastContainer, toast } from "react-toastify";
         dispatch(loginStart());
         const userCred={email:email, password:password}
        return await axios
-          .post("http://localhost:5000/api/user/authenticate", userCred).then((res) => {
+          .post("https://bakepricely.onrender.com/api/user/authenticate", userCred).then((res) => {
             dispatch(loginSuccess(res.data));
             setLoading(false);
             router.push('/home')

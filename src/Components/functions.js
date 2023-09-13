@@ -12,7 +12,7 @@ export const calculateIngredientsCost=async (ingredients, user)=>{
   if(ingredients){
   var totalCost=0
  for (let i=0; i < ingredients.length; i++) {
-    const res= await axios.get(`http://localhost:5000/api/ingredient/${ingredients[i].item}`, config);
+    const res= await axios.get(`https://bakepricely.onrender.com/api/ingredient/${ingredients[i].item}`, config);
     const cost= costOneIngredient(ingredients[i], res.data);
     totalCost+=cost;
   }
@@ -172,9 +172,9 @@ const packageSizeHandler = (savedIngredient, ingredient) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-        await axios.get(`http://localhost:5000/api/user/getuser?userid=${user._id}`, config).then(async(res)=>{
+        await axios.get(`https://bakepricely.onrender.com/api/user/getuser?userid=${user._id}`, config).then(async(res)=>{
           const result1=res.data.nofolderfiles
-          await axios.get(`http://localhost:5000/api/folder/allfolders?userid=${user._id}`, config).then((response)=>{
+          await axios.get(`https://bakepricely.onrender.com/api/folder/allfolders?userid=${user._id}`, config).then((response)=>{
               let result2=[];
               for (let i=0; i<response.data.length;i++) {
                 result2=result2.concat(response.data[i].files)
@@ -195,7 +195,7 @@ const packageSizeHandler = (savedIngredient, ingredient) => {
       },
     };
     //works
-    await axios.get(`http://localhost:5000/api/folder/allfolders?userid=${user._id}`, config).then(res=>{
+    await axios.get(`https://bakepricely.onrender.com/api/folder/allfolders?userid=${user._id}`, config).then(res=>{
       dispatch(fetchfoldersSuccess(res.data));
     })
   }
@@ -207,7 +207,7 @@ const packageSizeHandler = (savedIngredient, ingredient) => {
         },
       };
       dispatch(fetchingredientsStart())
-        await axios.get(`http://localhost:5000/api/ingredient`, config).then((res)=>{
+        await axios.get(`https://bakepricely.onrender.com/api/ingredient`, config).then((res)=>{
           if(res.data) {
             dispatch(fetchingredientsSuccess(res.data))
           }

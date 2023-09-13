@@ -32,7 +32,7 @@ const AllFolders = () => {
       },
     };
     //works
-    await axios.post('http://localhost:5000/api/folder', {
+    await axios.post('https://bakepricely.onrender.com/api/folder', {
       userid:user._id,
       name:newFolderName
     }, config).then(res=>{

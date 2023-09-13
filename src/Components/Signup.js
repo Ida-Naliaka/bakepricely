@@ -32,7 +32,7 @@ const Signup = () => {
           return;
         }
         try {
-          await axios.post("http://localhost:5000/api/user/newuser", { name, email, password });
+          await axios.post("https://bakepricely.onrender.com/api/user/newuser", { name, email, password });
           toast.success("Registration Successful! Please check your email");
           setTab("Login");
           setLoading(false);

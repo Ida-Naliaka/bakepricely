@@ -139,7 +139,7 @@ const RecipeTemplate = ({passedrecipe, reload}) => {
     };
     await axios
       .put(
-        `http://localhost:5000/api/folder//editfilecontent?userid=${user._id}&fileid=${recipe._id}`,
+        `https://bakepricely.onrender.com/api/folder//editfilecontent?userid=${user._id}&fileid=${recipe._id}`,
         recipeObj,
         config
       )

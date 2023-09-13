@@ -36,7 +36,7 @@ const MyAccount = () => {
         return;
       }
       try {
-        await axios.post("http://localhost:5000/api/user/changepassword", { password }).then(()=>{
+        await axios.post("https://bakepricely.onrender.com/api/user/changepassword", { password }).then(()=>{
           toast.success("Successfully changed password");
         router.push('/');
         setLoading(false);
@@ -62,7 +62,7 @@ const MyAccount = () => {
       },
   };
     try {
-       await axios.delete(`http://localhost:5000/api/user/deleteuser?userid=${user._id}`, config).then((res)=>{
+       await axios.delete(`https://bakepricely.onrender.com/api/user/deleteuser?userid=${user._id}`, config).then((res)=>{
      router.push('/')
     })
     } catch (error) {

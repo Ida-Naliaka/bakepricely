@@ -74,7 +74,7 @@ const Calculator = ({ Newrecipe }) => {
 
   const handledeletefile=async(file)=>{
     try {
-      await axios.delete(`http://localhost:5000/api/folder/deletefile?userid=${user._id}&fileid=${file.id}`, config).then((res)=>{
+      await axios.delete(`https://bakepricely.onrender.com/api/folder/deletefile?userid=${user._id}&fileid=${file.id}`, config).then((res)=>{
       getFiles(dispatch, user); 
     })
     } catch (error) {

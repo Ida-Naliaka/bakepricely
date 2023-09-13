@@ -24,7 +24,7 @@ const IngredientCard = ({ item, keysToDisplay }) => {
   
     const handleSaveClick = async() => {
       try {
-      await axios.put(`http://localhost:5000/api/ingredient/${item._id}`, editedData, config).then((res)=>{
+      await axios.put(`https://bakepricely.onrender.com/api/ingredient/${item._id}`, editedData, config).then((res)=>{
       getIngredients(dispatch, user)
       setEditableRow(false);      
       })
@@ -43,7 +43,7 @@ const IngredientCard = ({ item, keysToDisplay }) => {
   
     const handleDeleteClick = async() => {
       try {
-      await axios.delete(`http://localhost:5000/api/ingredient/${item._id}`, config).then(()=>{
+      await axios.delete(`https://bakepricely.onrender.com/api/ingredient/${item._id}`, config).then(()=>{
         dispatch(removeingredient(item)) 
       })
       } catch (error) {

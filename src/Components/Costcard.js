@@ -26,7 +26,7 @@ const Costcard = ({ ingredient }) => {
   };
   const getIngredient=async()=>{
     try {
-      await axios.get(`http://localhost:5000/api/ingredient/${ingredient.item}`, config).then((res)=>{
+      await axios.get(`https://bakepricely.onrender.com/api/ingredient/${ingredient.item}`, config).then((res)=>{
         setSavedIngredient(res.data)
     })
     } catch (error) {
@@ -97,7 +97,7 @@ const Costcard = ({ ingredient }) => {
       try {
         if (newIngredient) {
           axios
-            .post("http://localhost:5000/api/ingredient", newIngredient, config)
+            .post("https://bakepricely.onrender.com/api/ingredient", newIngredient, config)
             .then(async(res) => {
               const costofThisIngredient= await costOneIngredient(ingredient, res.data)
               setIngredientCost(costofThisIngredient);
@@ -108,7 +108,7 @@ const Costcard = ({ ingredient }) => {
           }
           if (updatedIngredient) {
             axios
-              .put(`http://localhost:5000/api/ingredient/${savedIngredient._id}`, updatedIngredient, config)
+              .put(`https://bakepricely.onrender.com/api/ingredient/${savedIngredient._id}`, updatedIngredient, config)
               .then(async(res) => {
                 const costofThisIngredient= await costOneIngredient(ingredient, res.data)
                 setIngredientCost(costofThisIngredient);

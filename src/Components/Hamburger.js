@@ -43,7 +43,7 @@ const handleAddFolder = async(e) => {
     },
   };
   //works
-  await axios.post('http://localhost:5000/api/folder', {
+  await axios.post('https://bakepricely.onrender.com/api/folder', {
     userid:user._id,
     name:newFolderName
   }).then(res=>{
@@ -82,7 +82,7 @@ const handleAddFolder = async(e) => {
     Overheads : 0,
     Profit:0,
   };
-  axios.put(`http://localhost:5000/api/user/newfile?userid=${user._id}`, newFile).then((res)=>{
+  axios.put(`https://bakepricely.onrender.com/api/user/newfile?userid=${user._id}`, newFile).then((res)=>{
    getFiles(dispatch, user);
     dispatch(setActiveFile(res.data));
     setNavItem1(res.data.name)

@@ -50,7 +50,7 @@ const Folder = ({ folder }) => {
         Profit: 0,
       };
       axios
-        .put(`http://localhost:5000/api/folder?folderid=${folder._id}`, newFile, config)
+        .put(`https://bakepricely.onrender.com/api/folder?folderid=${folder._id}`, newFile, config)
         .then((res) => {
             getFiles(dispatch, user);
             getFolders(dispatch, user);

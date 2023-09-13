@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "install-app": "npm install && node backend/index.js",
-    "start-app": "next start",
+    "install-app": "npm install",
+    "start-app": "node backend/index.js",
     "start-dev": "node backend/index.js && next dev",
     "build": "next build",
     "start": "next start",

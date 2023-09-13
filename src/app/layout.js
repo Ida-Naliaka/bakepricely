@@ -1,4 +1,3 @@
-"use client"
 import CostProvider from '@/Components/Costcontext'
 import './globals.css'
 import { Inter } from 'next/font/google'

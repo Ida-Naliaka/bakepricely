@@ -44,7 +44,7 @@ const FolderCard = ({folder}) => {
         },
       };
       axios
-        .put(`http://localhost:5000/api/folder?folderid=${folder._id}`, newFile, config)
+        .put(`https://bakepricely.onrender.com/api/folder?folderid=${folder._id}`, newFile, config)
         .then((res) => {
             getFiles(dispatch, user);
             getFolders(dispatch, user);
@@ -62,7 +62,7 @@ const FolderCard = ({folder}) => {
       },
     };
     try {
-      await axios.delete(`http://localhost:5000/api/folder?folderid=${folder._id}`, config).then((res)=>{
+      await axios.delete(`https://bakepricely.onrender.com/api/folder?folderid=${folder._id}`, config).then((res)=>{
       getFolders(dispatch, user);
       getFiles(dispatch, user);
     })

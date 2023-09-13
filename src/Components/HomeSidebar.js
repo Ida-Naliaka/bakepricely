@@ -42,7 +42,7 @@ const handleAddFile=(e)=>{
       Overheads : 0,
       Profit:0,
     };
-    axios.put(`http://localhost:5000/api/user/newfile?userid=${user._id}`, newFile, config).then((res)=>{
+    axios.put(`https://bakepricely.onrender.com/api/user/newfile?userid=${user._id}`, newFile, config).then((res)=>{
      getFiles(dispatch, user);
       dispatch(setActiveFile(res.data));
       setNavItem1(res.data.name)
